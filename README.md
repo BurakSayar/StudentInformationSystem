@@ -8,7 +8,6 @@ A Student Information System built with Flask and MySQL. It includes separate pa
 - Flask
 - MySQL
 - HTML/CSS (Bootstrap)
-- Jinja2 Templates
 
 💡 Features
 
