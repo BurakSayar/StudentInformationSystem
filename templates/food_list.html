@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Menüsü ve Rezervasyon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Yemek Menüsü</h1>
+        <img src="/static/img/output.png" alt="Yemek Menüsü">
+    </div>
+    <img src="../static/img/logo.png" alt="Logo" class="logo">
+
+    <div class="reservation">
+        <h2>Yemek Rezervasyonu</h2>
+        <form id="reservation-form" onsubmit="handleSubmit(event)">
+            <label for="name">İsim:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Rezervasyon Tarihi:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Rezervasyon Saati:</label>
+            <input type="time" id="time" name="time" required>
+            <button type="submit">Rezervasyon Yap</button>
+        </form>
+        <p id="reservation-message" class="hidden">Rezervasyonunuz alınmıştır. Teşekkür ederiz!</p>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="button">Geri Dön</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

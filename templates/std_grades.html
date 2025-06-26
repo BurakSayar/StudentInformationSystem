@@ -1,0 +1,25 @@
+{% extends 'std_layout.html' %}
+{% block content %}
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Algorithm</th>
+      <th scope="col">Software Project Development</th>
+      <th scope="col">Logic Design</th>
+        <th scope="col">Data Structure</th>
+        <th scope="col">Operating System</th>
+        <th scope="col">Calculus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {% for grade in grades %}
+      <td> {{ grade }}</td>
+        {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Bilgi Sistemi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .menu-item {
+            margin-bottom: 10px;
+        }
+        .sidebar .menu-item > a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .sidebar .menu-item > a:hover {
+            background-color: #495057;
+        }
+        .sidebar .submenu {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+        .sidebar .submenu a {
+            padding: 5px 10px;
+            color: white;
+        }
+        .sidebar .submenu a:hover {
+            background-color: #495057;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .content h2 {
+            margin-top: 0;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Öğrenci Bilgi Sistemi</h2>
+        <div class="menu-item">
+            <a href="#">Ders ve Dönem İşlemleri</a>
+            <div class="submenu">
+                <a href="{{ url_for('std_grades') }}" onclick="showSection('grades')">Not Bilgisi</a>
+                <a href="#" onclick="showSection('attendance')">Devamsızlık</a>
+                <a href="{{ url_for('std_lessons') }}" onclick="showSection('courses')">Alınan Dersler</a>
+                <a href="#" onclick="showSection('gpa')">Dönem Ortalamaları</a>
+                <a href="{{ url_for('logout') }}">Çıkış Yap</a>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+            {% block content %}
+
+            {% endblock %}
+
+</body>
+</html>

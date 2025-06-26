@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üniversite Bilgi Sistemi</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Arka plan rengini açık gri yap */
+            border: 2cm solid rgb(216, 148, 216); /* 2cm mor çerçeve ekle */
+            box-sizing: border-box; /* Çerçeve dahil hesaba kat */
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #ffffff; /* Beyaz arka plan rengi */
+            border-radius: 10px; /* Hafif köşeleri yuvarla */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge ekle */
+            padding: 20px; /* İçerik etrafında boşlukbırak */
+        }
+        .left-side, .right-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            width: 200px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="/static/img/logo.png" alt="ABC Üniversitesi Logosu">
+    </div>
+    <div class="container">
+        <div class="left-side">
+            <div class="buttons">
+                <a href="{{ url_for('food_list') }}" class="button">Yemekhane</a>
+                <a href="{{ url_for('academic_calendar') }}" class="button">Akademik Takvim</a>
+                <a href="{{ url_for('numbers') }}" class="button">Telefon Rehberi</a>
+                <a href="{{ url_for('library') }}" class="button">Kütüphane</a>
+            </div>
+        </div>
+        <div class="right-side">
+            <h2>ABC</h2>
+            <p>ABC Üniversitesi Bilgi Sistemi</p>
+            <div class="button" onclick="redirectTo('std_login')">Öğrenci Girişi</div>
+            <div class="button" onclick="redirectTo('acd_login')">Akademisyen Girişi</div>
+
+        </div>
+    </div>
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'acd_layout.html' %}
+{% block content %}
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Students</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for mail in mails %}
+    <tr>
+      <th scope="row">{{ mail[1] }}</th>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

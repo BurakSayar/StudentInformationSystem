@@ -1,0 +1,77 @@
+{% extends 'acd_layout.html' %}
+{% block content %}
+
+
+
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Students
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {% for mail in mails %}
+    <a class="dropdown-item" href="{{ url_for('acd_grades', id=mail[0]) }}">{{ mail[1] }}</a>
+    {% endfor %}
+
+  </div>
+</div>
+    <table>
+        <form method="POST"  action="">
+            <tr>
+                <td>
+                    <label>
+                        Algorithm
+                    </label>
+                </td>
+                <td><input type="number" name="alg" value="{{ std_grades[1] }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label>
+                        Software Project Development
+                    </label>
+                </td>
+                <td><input type="number" name="spd" value="{{ std_grades[2] }}" />
+                </td>
+            </tr>
+            <tr>
+                <td><label>
+                        Logic Design
+                    </label>
+                </td>
+                <td><input type="number" name="ld" value="{{ std_grades[3] }}" />
+                </td>
+            </tr>
+            <tr>
+                <td><label>
+                        Data Structure
+                    </label>
+                </td>
+                <td><input type="number" name="ds" value="{{ std_grades[4] }}" />
+                </td>
+            </tr>
+            <tr>
+                <td><label>
+                        Operating System
+                    </label>
+                </td>
+                <td><input type="number" name="os" value="{{ std_grades[5] }}" />
+                </td>
+            </tr>
+            <tr>
+                <td><label>
+                        Calculus
+                    </label>
+                </td>
+                <td><input type="number" name="clc" value="{{ std_grades[6] }}" />
+                </td>
+            </tr>
+            <button type="submit" class="btn btn-primary">Update</button>
+
+        </form>
+
+    </table><script>
+
+</script>
+
+{% endblock %}
