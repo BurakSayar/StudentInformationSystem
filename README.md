@@ -26,9 +26,11 @@ pip install -r requirements.txt
 📸 Website Images
 
 Main Page
+
 ![Ekran görüntüsü 2025-06-26 120404](https://github.com/user-attachments/assets/d9e3da20-a890-40ac-997c-5fd51228947d)
 
 Student Page
+
 ![Ekran görüntüsü 2025-06-26 120436](https://github.com/user-attachments/assets/ed2f0ba8-37c8-472c-8fd3-3829c24e9f2e)
 
 Instructor Page
